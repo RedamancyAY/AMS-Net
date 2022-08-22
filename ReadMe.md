@@ -1,19 +1,3 @@
----
-jupyter:
-  jupytext:
-    formats: ipynb,md
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.11.3
-  kernelspec:
-    display_name: Python 3
-    language: python
-    name: python3
----
-
-<!-- #region -->
 # AMS-Net: Adaptive Multi-Scale Network for Image Compressive Sensing
 
 This is the training code and test code for the paper [AMS-Net: Adaptive Multi-Scale Network for Image Compressive Sensing](https://ieeexplore.ieee.org/document/9855869). 
@@ -103,4 +87,3 @@ data = pd.read_csv("result/xxx.csv")
 data.groupby(["dataset", "sr"]).mean()
 ```
 
-<!-- #endregion -->
