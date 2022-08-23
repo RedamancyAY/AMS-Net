@@ -38,7 +38,7 @@ where the optional parameters are
 * crop_size: the image size in the training set
 * crop_num: the number of cropped images for each augmented iamge.
 
-Note that the total number of images in the training set is $n \times 8 \times crop-num$, and each image is of size $crop-size \times crop-size$.
+Note that the total number of images in the training set is ![](https://latex.codecogs.com/svg.latex?n \times 8 \times crop-num), and each image is of size $crop-size \times crop-size$.
 
 ### Train 
 
