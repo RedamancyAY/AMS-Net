@@ -7,9 +7,9 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.11.3
+#       jupytext_version: 1.14.1
 #   kernelspec:
-#     display_name: Python 3
+#     display_name: Python 3 (ipykernel)
 #     language: python
 #     name: python3
 # ---
@@ -29,10 +29,10 @@ from PIL import Image
 from tqdm.auto import tqdm
 
 # + tags=[]
-import ay.common
-import ay.common.device as device
-import ay.common.image as image
-import ay.data.read as R
+# import ay.common
+# import ay.common.device as device
+# import ay.common.image as image
+# import ay.data.read as R
 
 # + tags=[]
 from utils.image import aug_v1, crop_img, read_file_paths, read_img
@@ -79,12 +79,12 @@ def gene_tfrecords(dataset, mode="L", crop_size=128, crop_num=28):
             for path in paths:
 
                 # read image -> deal image -> augment -> crop
-                img = image.read_img(path, mode=mode)
+                img = read_img(path, mode=mode)
                 if img.shape[0] < crop_size or img.shape[1] < crop_size:
                     continue
                 imgs = aug_v1(img)
                 for _img in imgs:
-                    _imgs = image.crop_img(img, crop_size=crop_size, num=crop_num)
+                    _imgs = crop_img(img, crop_size=crop_size, num=crop_num)
                     for _img in _imgs:
                         img_string = tf.io.serialize_tensor(_img)
                         writer.write(img_string.numpy())
