@@ -35,7 +35,7 @@ import tensorflow as tf
 import tensorflow.keras.layers as layers
 from tqdm.auto import tqdm
 
-import ay.cs.test as Test
+# import ay.cs.test as Test
 from AMS_Net import CS_model
 from utils.image import read_file_paths
 from utils.test import test_imgSet
